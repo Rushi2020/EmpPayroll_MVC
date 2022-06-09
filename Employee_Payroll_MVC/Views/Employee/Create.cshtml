@@ -1,0 +1,125 @@
+﻿@model DatabaseLayer.UserModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@*<h1>Create</h1>*@
+
+@**@
+
+   <header class="header-content header">
+        <div class="logo-content">
+            <img src="/assets/icon.png" alt="logo">
+            <div>
+                <span class="emp-text">EMPLOYEE</span> </br>
+                <span class="emp-textemp-payroll">PAYROLL</span>
+            </div>
+        </div>
+    </header>
+<hr />
+
+<div class="row"  >
+    <div class="col-md-4">
+        <div class="main">
+        <form asp-action="Create" class="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           @* <div class="form-group">
+                <label asp-for="EmployeeID" class="control-label"></label>
+                <input asp-for="EmployeeID" class="form-control" />
+                <span asp-validation-for="EmployeeID" class="text-danger"></span>
+            </div>*@
+                <h4 class:"title">Employee PayRoll Form</h4>
+                <br />
+           <div class="group">
+            <div class="form-group">
+@*@*@                <label asp-for="EmployeeName" class="control-label"></label>
+@*@*@                <input asp-for="EmployeeName"  class="form-control" />
+                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            </div>
+            <div class="row-content">
+                <label asp-for="ProfileImage" class="PI"></label>
+@*                <input asp-for="ProfileImage" class="form-control" />
+*@@*                <span asp-validation-for="ProfileImage" class="text-danger"></span>
+           @*@ <div class="profile-radio-content">
+                    <label> <input type="radio"  name="profile"
+                            value="" required>
+                        <img class="profile"  src="/assets/p1.png"> </label>
+                    <label> <input type="radio" name="profile"
+                          value="" required>
+                       <img class="profile"  src="/assets/p2.png"> </label>
+                    <label> <input type="radio"  name="profile"
+                            value="" required>
+                        <img class="profile" src="/assets/p3.png"> </label>
+                    <label> <input type="radio"  name="profile"
+                            value="" required>
+                        <img class="profile"  src="/assets/p4.png"> </label>
+                </div>@*
+*@            </div>
+            <div  class="rad">
+                <label asp-for="Gender" class="PI"></label>
+                <input class="rad" type="radio" id="male" name="gender" value="male">
+                    <label class="text" for="male">Male</label>
+                    <input class="rad" type="radio" id="female" name="gender" value="female">
+                    <label class="text" for="female">Female</label>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Department" class="control-label"></label>
+                <div class="row-content">
+                <div>
+                    <input class="checkbox" type="checkbox"  name="department" value="HR">
+                    <label class="text" for="hr">HR</label>
+                    <input class="checkbox" type="checkbox"  name="department" value="Sales">
+                    <label class="text" for="sales">Sales</label>
+                    <input class="checkbox" type="checkbox"  name="department" value="Finance">
+                    <label class="text" for="finance">Finance</label>
+                    <input class="checkbox" type="checkbox"  name="department" value="Engineer">
+                    <label class="text" for="engineer">Engineer</label>
+                    <input class="checkbox" type="checkbox"  name="department" value="Others">
+                    <label class="text" for="others">Others</label>
+                </div>
+            </div>
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div> <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+             
+@*                 <div class="button">
+*@@*                   <input type="submit" value="Submit" class="btn btn-primary" />
+*@@*                   <div style="padding-left:20px">
+@*                 @*  <input  type="submit" value="Reset" class="btn btn-primary" />*@
+@*@
+@*                   </div>
+*@                 @*</div>*@
+            </div>
+          </div>  
+        </form>
+        </div>
+    </div>
+</div>
+
+
+ <div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
