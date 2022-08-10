@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using DatabaseLayer;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -33,10 +34,11 @@ namespace Employee_Payroll_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                this.employeeBl.AddEmployee(employee);
+              this.employeeBl.AddEmployee(employee);
                 return RedirectToAction("Index");
             }
             return View(employee);
+        
         }
 
         [HttpGet]
@@ -72,13 +74,13 @@ namespace Employee_Payroll_MVC.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int? EmployeeID)
+        public IActionResult Delete(int? id)
         {
-            if (EmployeeID == null)
+            if (id == null)
             {
                 return NotFound();
             }
-            UserModel employee = employeeBl.GetEmployeeData(EmployeeID);
+            UserModel employee = employeeBl.GetEmployeeData(id);
 
             if (employee == null)
             {
@@ -89,9 +91,9 @@ namespace Employee_Payroll_MVC.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int? EmployeeID)
+        public IActionResult DeleteConfirmed(int? id)
         {
-            employeeBl.DeleteEmployee(EmployeeID);
+            employeeBl.DeleteEmployee(id);
             return RedirectToAction("Index");
         }
 

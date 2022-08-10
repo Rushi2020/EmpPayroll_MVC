@@ -10,7 +10,7 @@ namespace RepositoryLayer
         public bool AddEmployee(UserModel user);
         public List<UserModel> GetAllEmployees();
         public bool UpdateEmployee(UserModel employee);
-        public bool DeleteEmployee(int? EmployeeID);
+        public bool DeleteEmployee(int? id);
         public UserModel GetEmployeeData(int? id);
 
 

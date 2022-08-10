@@ -4,10 +4,6 @@
     ViewData["Title"] = "Create";
 }
 
-@*<h1>Create</h1>*@
-
-@**@
-
    <header class="header-content header">
         <div class="logo-content">
             <img src="/assets/icon.png" alt="logo">
@@ -24,43 +20,43 @@
         <div class="main">
         <form asp-action="Create" class="form">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-           @* <div class="form-group">
-                <label asp-for="EmployeeID" class="control-label"></label>
-                <input asp-for="EmployeeID" class="form-control" />
-                <span asp-validation-for="EmployeeID" class="text-danger"></span>
-            </div>*@
+          
                 <h4 class:"title">Employee PayRoll Form</h4>
                 <br />
            <div class="group">
             <div class="form-group">
-@*@*@                <label asp-for="EmployeeName" class="control-label"></label>
-@*@*@                <input asp-for="EmployeeName"  class="form-control" />
+               <label asp-for="EmployeeName" class="control-label"></label>
+                <input asp-for="EmployeeName"  class="form-control" />
                 <span asp-validation-for="EmployeeName" class="text-danger"></span>
             </div>
-            <div class="row-content">
+
+             <div class="form-group">
+
                 <label asp-for="ProfileImage" class="PI"></label>
-@*                <input asp-for="ProfileImage" class="form-control" />
-*@@*                <span asp-validation-for="ProfileImage" class="text-danger"></span>
-           @*@ <div class="profile-radio-content">
-                    <label> <input type="radio"  name="profile"
-                            value="" required>
-                        <img class="profile"  src="/assets/p1.png"> </label>
-                    <label> <input type="radio" name="profile"
-                          value="" required>
-                       <img class="profile"  src="/assets/p2.png"> </label>
-                    <label> <input type="radio"  name="profile"
-                            value="" required>
-                        <img class="profile" src="/assets/p3.png"> </label>
-                    <label> <input type="radio"  name="profile"
-                            value="" required>
-                        <img class="profile"  src="/assets/p4.png"> </label>
-                </div>@*
-*@            </div>
+                <div class="row-content">
+                 <div class="form-group">
+@*                <label asp-for="ProfileImage" class="control-label"></label>
+*@                <div>
+                    @Html.RadioButtonFor(model => model.ProfileImage, "~/assets/p1.png")
+                    <img class="image1" src="~/assets/p1.png" />
+                    @Html.RadioButtonFor(model => model.ProfileImage, "~/assets/p2.png")
+                    <img class="image2" src="~/assets/p2.png" />
+                    @Html.RadioButtonFor(model => model.ProfileImage, "~/assets/p3.png")
+                    <img class="image3" src="~/assets/p3.png" />
+                    @Html.RadioButtonFor(model => model.ProfileImage, "~/assets/p4.png")
+                    <img class="image4" src="~/assets/p4.png" />
+                </div>
+                <span asp-validation-for="ProfileImage" class="text-danger"></span>
+            </div>
+            </div>
+        </div>
+            
+
             <div  class="rad">
                 <label asp-for="Gender" class="PI"></label>
-                <input class="rad" type="radio" id="male" name="gender" value="male">
+                <input class="rad" type="radio"  name="gender" value="male">
                     <label class="text" for="male">Male</label>
-                    <input class="rad" type="radio" id="female" name="gender" value="female">
+                    <input class="rad" type="radio"  name="gender" value="female">
                     <label class="text" for="female">Female</label>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
@@ -98,28 +94,30 @@
                 <span asp-validation-for="Notes" class="text-danger"></span>
             </div> <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-             
-@*                 <div class="button">
-*@@*                   <input type="submit" value="Submit" class="btn btn-primary" />
-*@@*                   <div style="padding-left:20px">
-@*                 @*  <input  type="submit" value="Reset" class="btn btn-primary" />*@
-@*@
-@*                   </div>
-*@                 @*</div>*@
+                <input type="submit" value="Create" class="btn btn-primary" /> 
+                     <div class="list"> <a asp-action="Index">Back to List</a></div>
+
+                 <div class="button">
+                  <input type="submit" value="Submit" class="btn btn-primary" />
+                   <div style="padding-left:20px">
+                   <input  type="submit" value="Reset" class="btn btn-primary" />
+
+                   </div>
+               </div>
             </div>
           </div>  
         </form>
+
         </div>
+
     </div>
+
 </div>
-
-
- <div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+
+
+

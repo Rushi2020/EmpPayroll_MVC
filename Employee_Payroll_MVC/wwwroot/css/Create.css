@@ -10,6 +10,7 @@
 */    display: flex;
     width: 152%;
      height: 100%;
+     flex-direction:row;
 /*    min-height: calc(100%);
 */    background-color: #f7f7f7;
 /*    align-items:center;
@@ -39,10 +40,11 @@ h4 {
 */ padding: 7px;
     display: flex;
 }
-.button{
-    display:flex;
-    justify-content:flex-end;
-    padding-left:500px;
+.button {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 460px;
+    align-self: flex-end;
 }
 .col-md-4 {
     display: flex;
@@ -99,9 +101,7 @@ h4 {
 }
 .control-label {
     display: flex;
-/*    margin-left:2px
-*//*    justify-content: flex-start
-*/}
+}
 .profile-radio-content{
     display:flex;
     flex-direction:row;
@@ -109,7 +109,9 @@ h4 {
         
 }
 .list{
-    cursor:pointer
+    cursor:pointer;
+    padding-left:50px;
+    flex:none
 }
 .profile-radio-content > label {
      display: flex;
@@ -136,9 +138,9 @@ label {
 Input {
     border: 1px solid #ccc;
     border-radius: 4px;
-    resize: vertical;
-    display:inline;
-    align-items:center
+   align-items:center;
+      
+
 } 
 .rad{
     display:inline-block;
@@ -155,7 +157,8 @@ Input {
     width:600px;
     justify-content:center;
     align-items:center;
-/*    margin-left:20px;
-*/    margin-right:150px
-/*    padding-right:00px
-*/}
+   margin-right:150px
+}
+
+
+

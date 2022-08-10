@@ -49,8 +49,8 @@
                 @Html.DisplayFor(modelItem => item.EmployeeName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProfileImage)
-            </td>
+               <img src="@Url.Content(item.ProfileImage)"/>
+           </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Gender)
             </td>
@@ -69,7 +69,7 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new {  EmployeeID=item.EmployeeID  }) |
                 @Html.ActionLink("Details", "Details", new { EmployeeID=item.EmployeeID  }) |
-                @Html.ActionLink("Delete", "Delete", new { EmployeeID=item.EmployeeID  })
+                @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeID  })
             </td>
         </tr>
 }

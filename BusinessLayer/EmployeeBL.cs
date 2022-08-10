@@ -49,32 +49,28 @@ namespace BusinessLayer
             }
         }
 
-        public bool DeleteEmployee(int? EmployeeID)
+        public bool DeleteEmployee(int? id )
         {
-                try
+            try
                 {
-                    return this.employeeRL.DeleteEmployee(EmployeeID);
+                    return this.employeeRL.DeleteEmployee(id);
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
         }
-        public UserModel GetEmployeeData(int? EmployeeID)
+        public UserModel GetEmployeeData(int? id)
         {
                 try
                 {
-                    return this.employeeRL.GetEmployeeData(EmployeeID);
+                return this.employeeRL.GetEmployeeData(id);
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
         }
-
-        //bool IEmployeeBL.GetEmployeeData(int? id)
-        //{
-         //   throw new NotImplementedException();
-       // }
+        
     }
 }
